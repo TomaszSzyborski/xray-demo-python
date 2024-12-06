@@ -102,3 +102,9 @@ The client will raise exceptions for:
 3. Use meaningful test execution names
 4. Regularly clean up old test executions
 5. Monitor real-time test execution updates for early feedback
+
+
+fetch data from garbage collector:
+import gc
+`[o for o in gc.get_all_objects() if "<class_name>" in f"{type(o)}"][0].test_execution.test_plan_key`
+where <class_name> is part or whole of class name in question
